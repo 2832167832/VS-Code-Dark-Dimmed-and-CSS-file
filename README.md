@@ -1,4 +1,4 @@
-# VSCode 主题 深色 附带CSS文件
+# VSCode 深色主题
 ```css
 /* VSCode Dark+ Theme Colors */
 
