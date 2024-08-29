@@ -1,55 +1,139 @@
-# VSCode 深色主题
-```css
-/* VSCode Dark+ Theme Colors */
+# AnKi 代码高亮卡片模板 
+高亮风格：VSCode 深色主题
+```Javascript
+<pre><code class="language-html">{{背面}}</code></pre>
 
-/* Text Colors */
-.code {
-  color: #cccccc;
-}
+    <!-- 引入Prism.js库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
-/* Background Colors */
-.code-background {
-  background-color: #1e1e1e;
-}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const back = document.getElementById("back");
 
-/* Syntax Highlighting Colors */
-.syntax-highlighting {
-  color: #66d9ef; /* Variable */
-}
-
-.syntax-highlighting.constant {
-  color: #d54e53; /* Constant */
-}
-
-.syntax-highlighting.string {
-  color: #8bc34a; /* String */
-}
-
-.syntax-highlighting.comment {
-  color: #808080; /* Comment */
-}
-
-.syntax-highlighting.keyword {
-  color: #03a9f4; /* Keyword */
-}
-
-.syntax-highlighting.function {
-  color: #03a9f4; /* Function */
-}
-
-.syntax-highlighting.class {
-  color: #03a9f4; /* Class */
-}
-
-.syntax-highlighting.type {
-  color: #03a9f4; /* Type */
-}
-
-.syntax-highlighting.operator {
-  color: #cccccc; /* Operator */
-}
-
-.syntax-highlighting.punctuation {
-  color: #cccccc; /* Punctuation */
-}
+        // 应用Prism.js高亮
+        Prism.highlightAll();
+    });
+</script>
 ```
+
+样式
+```css
+<!-- 包含代码块的卡片内容 -->
+<pre><code class="language-javascript">{{YourCodeField}}</code></pre>
+
+<!-- 自定义CSS来模仿VSCode的黑色主题 -->
+<style>
+    /* Prism.js 代码块的基础样式 */
+pre[class*="language-"],
+code[class*="language-"] {
+    color: #d4d4d4;
+    background: #1e1e1e; /* 代码块背景色 */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: auto;
+}
+
+/* 注释 */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6a9955;
+}
+
+/* 标点符号 */
+.token.punctuation {
+    color: #d4d4d4;
+}
+
+/* 属性、标签、关键字等 */
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.keyword {
+    color: #569cd6;
+}
+
+/* 布尔值、数字 */
+.token.boolean,
+.token.number {
+    color: #b5cea8;
+}
+
+/* 函数 */
+.token.function,
+.token.class-name {
+    color: #dcdcaa;
+}
+
+/* 字符串和字符 */
+.token.string,
+.token.char,
+.token.attr-value,
+.token.builtin,
+.token.inserted {
+    color: #ce9178;
+}
+
+/* 变量 */
+.token.variable {
+    color: #9cdcfe;
+}
+
+/* 操作符和实体 */
+.token.operator,
+.token.entity,
+.token.url {
+    color: #d4d4d4;
+}
+
+/* 规则 */
+.token.atrule,
+.token.attr-value {
+    color: #c586c0;
+}
+
+/* 正则表达式 */
+.token.regex {
+    color: #d16969;
+}
+
+/* 重要性 */
+.token.important {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+/* 添加额外的样式 */
+.token.deleted {
+    text-decoration: line-through;
+}
+
+.token.inserted {
+    text-decoration: underline;
+}
+
+/* 代码块中的行号样式 */
+pre[data-line] {
+    position: relative;
+    padding-left: 3.8em;
+}
+
+.line-highlight {
+    background: rgba(128, 128, 128, 0.2);
+    background-blend-mode: multiply;
+}
+
+</style>
+```
+
