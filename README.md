@@ -1,9 +1,10 @@
 # AnKi 代码高亮卡片模板 
 高亮风格：VSCode 深色主题
+后续目标：实现 Markdown 中的代码块，解决代码类型只能在 js 源码中修改
 ```Javascript
 <pre><code class="language-html">{{背面}}</code></pre>
 
-    <!-- 引入Prism.js库 -->
+    <!-- 引入 Prism.js 库 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
@@ -11,7 +12,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const back = document.getElementById("back");
 
-        // 应用Prism.js高亮
+        // 应用 Prism.js 高亮
         Prism.highlightAll();
     });
 </script>
@@ -22,7 +23,7 @@
 <!-- 包含代码块的卡片内容 -->
 <pre><code class="language-javascript">{{YourCodeField}}</code></pre>
 
-<!-- 自定义CSS来模仿VSCode的黑色主题 -->
+<!-- 自定义 CSS 来模仿 VSCode 的黑色主题 -->
 <style>
     /* Prism.js 代码块的基础样式 */
 pre[class*="language-"],
